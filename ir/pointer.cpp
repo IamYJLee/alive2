@@ -703,8 +703,6 @@ Pointer::mkIf(const expr &cond, const Pointer &then, const Pointer &els) {
 }
 
 ostream& operator<<(ostream &os, const Pointer &p) {
-  if (p.isNull().isTrue())
-    return os << "null";
 
 #define P(field, fn)   \
   if (field.isConst()) \
