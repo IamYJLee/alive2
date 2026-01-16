@@ -79,7 +79,13 @@ int main(int argc, char **argv) {
   llvm::EnableDebugBuffering = true;
   llvm::LLVMContext Context;
   unsigned M1_anon_count = 0;
+  
+  char buffer[10]; // 고정된 크기의 버퍼 (10바이트)
+    
+    cout << "Enter your name: ";
+    cin >> buffer;   // 입력 크기 제한이 없음 → 버퍼 오버플로우 발생 가능
 
+    cout << "Hello, " << buffer << "!" << endl;
   std::string Usage =
       R"EOF(Alive2 stand-alone translation validator:
 version )EOF";
